@@ -32,7 +32,8 @@
         "drupal": {
             "type": "composer",
             "url": "https://packages.drupal.org/8"
-        },
+        }
+    },
     "extra": {
         "installer-types": [
             "library",
