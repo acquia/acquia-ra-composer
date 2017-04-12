@@ -9,6 +9,7 @@ This repository contains a sample ```composer.json``` file which can be used to 
 
 1. Copy the ```composer.json``` file into the top level of your repository.
 1. Add the specific drupal modules, themes and libraries that your site requires. You may do this by manually adding items to the ```require``` section of the ```composer.json``` or running the command ```composer require drupal/modulename```.
+1. Ensure that ```drupal-composer/drupal-scaffold``` is required *before* ```drupal/core```.
 1. Run ```composer update``` to install all code, vendor directories, etc.
 
 You must commit all generated code to your Acquia repository!
