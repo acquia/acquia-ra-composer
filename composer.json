@@ -4,7 +4,7 @@
     "type": "project",
     "license": "MIT",
     "require": {
-        "drupal/core": "^8.3",
+        "drupal/core": "8.2.7",
         "drupal/admin_toolbar": "^1.0",
         "drupal/dropzonejs": "^1.0",
         "drupal/entity_embed": "dev-1.x",
@@ -17,6 +17,7 @@
         "enyo/dropzone": "4.2.0",
         "desandro/masonry": "^4.1",
         "desandro/imagesloaded": "^4.1",
+        "drupal-composer/drupal-scaffold": "^2.0.0",
         "oomphinc/composer-installers-extender": "^1.1"
     },
     "require-dev": {
