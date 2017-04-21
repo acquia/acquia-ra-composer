@@ -5,7 +5,7 @@
     "license": "MIT",
     "require": {
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/core": "8.2.7",
+        "drupal/core": "^8.3",
         "drupal/admin_toolbar": "^1.0",
         "drupal/dropzonejs": "^1.0",
         "drupal/entity_embed": "dev-1.x",
