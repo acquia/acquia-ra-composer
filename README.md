@@ -3,7 +3,13 @@
 
 [Acquia Automation](https://docs.acquia.com/ra/automation) will update Composer built websites whose repositories conform to the proper architecture and include a fully-functioning ```composer.json``` file that builds a Drupal website.
 
-This repository contains a sample ```composer.json``` file which can be used to start a working Drupal 8 build. The file contains a few basic drupal modules as well as an example of adding third-party dependencies (for [drupal/file_browser](https://www.drupal.org/project/file_browser)). Please see [Acquia Automation: Composer builds](https://docs.acquia.com/ra/automation/composer) for a detailed explanation of each section.
+This repository contains sample ```composer.json``` files which can be used to start a working Drupal 8 build. Each example file builds on the previous, with the most comprehensive being ```composer-custom.json```.
+* ```composer-basic.json```: This file installs drupal core, and the required scaffold and installers packages. This is the bare minimum required for a drupal site on Acquia hosting.
+* ```composer-contrib.json```: This file adds a few drupal contrib modules as well as two modules intended for develoment only.
+* ```composer-libraries.json```:  This file builds on the previous two by illustrating how you can use Composer to add third-party dependencies, like libraries, and installs them is specific directories (the example is [drupal/file_browser](https://www.drupal.org/project/file_browser)).
+* ```composer-custom.json```: This file adds in custom repos that are not on packagist.
+
+Please see [Acquia Automation: Composer builds](https://docs.acquia.com/ra/automation/composer) for a detailed explanation of each section.
 
 ## Usage
 
