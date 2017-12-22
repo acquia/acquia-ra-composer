@@ -32,5 +32,22 @@
             "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
             "docroot/libraries/{$name}": ["type:drupal-library"]
         }
-    }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer drupal-scaffold"
+        ],
+        "post-update-cmd": [
+            "@composer drupal-scaffold"
+        ],
+        "drupal-scaffold": [
+            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+        ]
+    },
+    "enable-patching": true,
+	"patches": {
+		"drupal/[module_name]": {
+			"Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"     
+		}
+	}
 }
