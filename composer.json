@@ -10,10 +10,12 @@
         }
     },
     "require": {
+        "composer/installers": "^1.0",
+        "cweagans/composer-patches": "^1.6.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/core": "^8.3",
         "drupal/admin_toolbar": "^1.0",
-        "composer/installers": "^1.0"
+        "drupal/core": "^8.3",
+        "drush/drush": "^8.1"
     },
     "require-dev": {
         "drupal/devel": "^1.0",
@@ -27,10 +29,10 @@
     "extra": {
         "installer-paths": {
             "docroot/core": ["type:drupal-core"],
+            "docroot/libraries/{$name}": ["type:drupal-library"],
             "docroot/modules/contrib/{$name}": ["type:drupal-module"],
             "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
-            "docroot/libraries/{$name}": ["type:drupal-library"]
+            "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
         }
     },
     "scripts": {
