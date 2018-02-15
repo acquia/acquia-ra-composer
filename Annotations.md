@@ -1,5 +1,5 @@
 # Acquia RA composer.json Template w/Annotations
-[Name and Description](#name-and-description)
+[Name and Description](#name-and-description)  
 [Type](#type)  
 [License](#license)  
 [Repositories](#repositories)  
