@@ -1,59 +1,59 @@
 {
-    "name": "acquia/acquia-ra-composer",
-    "description": "Project json for Acquia Remote Administration Composer builds",
-    "type": "project",
-    "license": "Proprietary",
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-          },
-          {
-            "type": "composer",
-            "url": "https://asset-packagist.org"
-          }
+  "name": "acquia/acquia-ra-composer",
+  "description": "Project json for Acquia Remote Administration Composer builds",
+  "type": "project",
+  "license": "Proprietary",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "composer/installers": "^1.0",
+    "cweagans/composer-patches": "^1.6.0",
+    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "drupal/admin_toolbar": "^1.0",
+    "drupal/core": "^8.3",
+    "drush/drush": "^8.1"
+  },
+  "require-dev": {
+    "drupal/devel": "^1.0",
+    "drupal/stage_file_proxy": "^1.0"
+  },
+  "conflict": {
+    "drupal/core": "7.*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "docroot/core": ["type:drupal-core"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold"
     ],
-    "require": {
-        "composer/installers": "^1.0",
-        "cweagans/composer-patches": "^1.6.0",
-        "drupal-composer/drupal-scaffold": "^2.0.0",
-        "drupal/admin_toolbar": "^1.0",
-        "drupal/core": "^8.3",
-        "drush/drush": "^8.1"
-    },
-    "require-dev": {
-        "drupal/devel": "^1.0",
-        "drupal/stage_file_proxy": "^1.0"
-    },
-    "conflict": {
-        "drupal/core": "7.*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "extra": {
-        "installer-paths": {
-            "docroot/core": ["type:drupal-core"],
-            "docroot/libraries/{$name}": ["type:drupal-library"],
-            "docroot/modules/contrib/{$name}": ["type:drupal-module"],
-            "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
-        }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "@composer drupal-scaffold"
-        ],
-        "post-update-cmd": [
-            "@composer drupal-scaffold"
-        ],
-        "drupal-scaffold": [
-            "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-        ]
-    },
-    "enable-patching": true,
-	"patches": {
-		"drupal/[module_name]": {
-			"Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
-		}
-	}
+    "post-update-cmd": [
+      "@composer drupal-scaffold"
+    ],
+    "drupal-scaffold": [
+      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    ]
+  },
+  "enable-patching": true,
+  "patches": {
+    "drupal/[module_name]": {
+      "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
+    }
+  }
 }
