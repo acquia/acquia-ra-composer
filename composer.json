@@ -2,7 +2,7 @@
   "name": "acquia/acquia-ra-composer",
   "description": "Project json for Acquia Remote Administration Composer builds",
   "type": "project",
-  "license": "Proprietary",
+  "license": "proprietary",
   "repositories": [
     {
       "type": "composer",
