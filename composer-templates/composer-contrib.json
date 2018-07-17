@@ -2,13 +2,17 @@
     "name": "acquia/acquia-ra-composer",
     "description": "Project json for Acquia Remote Administration Composer builds",
     "type": "project",
-    "license": "MIT",
-    "repositories": {
-        "drupal": {
-            "type": "composer",
-            "url": "https://packages.drupal.org/8"
-        }
-    },
+    "license": "Proprietary",
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://packages.drupal.org/8"
+      },
+      {
+        "type": "composer",
+        "url": "https://asset-packagist.org"
+      }
+    ],
     "require": {
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "drupal/core": "^8.3",
