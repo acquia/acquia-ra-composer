@@ -37,6 +37,12 @@
       "docroot/modules/contrib/{$name}": ["type:drupal-module"],
       "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
       "docroot/themes/contrib/{$name}": ["type:drupal-theme"]
+    },
+    "enable-patching": true,
+    "patches": {
+      "drupal/[module_name]": {
+        "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
+      }
     }
   },
   "scripts": {
@@ -50,10 +56,4 @@
       "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     ]
   },
-  "enable-patching": true,
-  "patches": {
-    "drupal/[module_name]": {
-      "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
-    }
-  }
 }
