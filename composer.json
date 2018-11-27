@@ -55,5 +55,5 @@
     "drupal-scaffold": [
       "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     ]
-  },
+  }
 }
