@@ -1,0 +1,75 @@
+{
+  "name": "acquia/acquia-ra-composer",
+  "description": "Project json for Acquia Remote Administration Composer builds",
+  "type": "project",
+  "license": "proprietary",
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    "asset-packagist": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  },
+  "require": {
+    "composer/installers": "^1.2.0",
+    "cweagans/composer-patches": "^1.6.5",
+    "drupal-composer/drupal-scaffold": "^2.5.4",
+    "oomphinc/composer-installers-extender": "^1.1",
+    "wikimedia/composer-merge-plugin": "^1.4.1"
+  },
+  "require-dev": {},
+  "config": {
+    "sort-packages": true,
+    "vendor-dir": "vendor"
+  },
+  "conflict": {
+    "drupal/core": "7.*"
+  },
+  "extra": {
+    "enable-patching": true,
+    "patches": {
+      "drupal/[module_name]": {
+        "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
+      }
+    },
+    "installer-types": ["bower-asset", "npm-asset"],
+    "installer-paths": {
+      "[drupal-root]/core": ["type:drupal-core"],
+      "[drupal-root]/modules/contrib/{$name}": ["type:drupal-module"],
+      "[drupal-root]/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "[drupal-root]/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "[drupal-root]/profiles/custom/{$name}": ["type:drupal-custom-profile"],
+      "[drupal-root]/themes/contrib/{$name}": ["type:drupal-theme"],
+      "[drupal-root]/themes/custom/{$name}": ["type:drupal-custom-theme"],
+      "[drupal-root]/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"]
+    },
+    "merge-plugin": {
+      "include": [
+        "[drupal-root]/modules/custom/*/composer.json"
+      ],
+      "replace": false,
+      "ignore-duplicates": true
+    },
+    "scripts": {
+      "post-install-cmd": [
+        "@composer drupal-scaffold",
+        "find docroot vendor -name '.git' | xargs rm -rf",
+        "find docroot vendor -name '.github' | xargs rm -rf"
+
+      ],
+      "post-update-cmd": [
+        "@composer drupal-scaffold",
+        "find docroot vendor -name '.git' | xargs rm -rf",
+        "find docroot vendor -name '.github' | xargs rm -rf"
+      ],
+      "drupal-scaffold": [
+        "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+      ]
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
