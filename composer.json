@@ -43,6 +43,12 @@
       "drupal/[module_name]": {
         "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
       }
+    },
+    "drupal-scaffold": {
+      "excludes": [
+        ".htaccess",
+        "robots.txt"
+      ]
     }
   },
   "scripts": {
