@@ -20,7 +20,8 @@
     "oomphinc/composer-installers-extender": "^1.1",
     "wikimedia/composer-merge-plugin": "^1.4.1"
   },
-  "require-dev": {},
+  "require-dev": {
+  },
   "config": {
     "sort-packages": true,
     "vendor-dir": "vendor"
@@ -28,12 +29,20 @@
   "conflict": {
     "drupal/core": "7.*"
   },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "extra": {
     "enable-patching": true,
     "patches": {
       "drupal/[module_name]": {
         "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
       }
+    },
+    "drupal-scaffold": {
+      "excludes": [
+        ".htaccess",
+        "robots.txt"
+      ]
     },
     "installer-types": ["bower-asset", "npm-asset"],
     "installer-paths": {
@@ -52,23 +61,21 @@
       ],
       "replace": false,
       "ignore-duplicates": true
-    },
-    "scripts": {
-      "post-install-cmd": [
-        "@composer drupal-scaffold",
-        "find docroot vendor -name '.git' | xargs rm -rf",
-        "find docroot vendor -name '.github' | xargs rm -rf"
-      ],
-      "post-update-cmd": [
-        "@composer drupal-scaffold",
-        "find docroot vendor -name '.git' | xargs rm -rf",
-        "find docroot vendor -name '.github' | xargs rm -rf"
-      ],
-      "drupal-scaffold": [
-        "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-      ]
     }
   },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  "scripts": {
+    "post-install-cmd": [
+      "@composer drupal-scaffold",
+      "find docroot vendor -name '.git' | xargs rm -rf",
+      "find docroot vendor -name '.github' | xargs rm -rf"
+    ],
+    "post-update-cmd": [
+      "@composer drupal-scaffold",
+      "find docroot vendor -name '.git' | xargs rm -rf",
+      "find docroot vendor -name '.github' | xargs rm -rf"
+    ],
+    "drupal-scaffold": [
+      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    ]
+  }
 }
