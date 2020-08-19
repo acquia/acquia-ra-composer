@@ -16,9 +16,10 @@
   "require": {
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.6.0",
-    "drupal-composer/drupal-scaffold": "^2.0.0",
+    "drupal/core-composer-scaffold": "^8.9",
+    "drupal/core-vendor-hardening": "^8.9",
+    "drupal/core-recommended": "^8.9",
     "drupal/admin_toolbar": "^1.0",
-    "drupal/core-recommended": "^8.8",
     "drush/drush": "^8.1"
   },
   "require-dev": {
@@ -45,21 +46,17 @@
       }
     },
     "drupal-scaffold": {
-      "excludes": [
-        ".htaccess",
-        "robots.txt"
-      ]
+      "locations": {
+        "web-root": "./docroot"
+      }
     }
   },
   "scripts": {
     "post-install-cmd": [
-      "@composer drupal-scaffold"
+      "@composer drupal:scaffold"
     ],
     "post-update-cmd": [
-      "@composer drupal-scaffold"
-    ],
-    "drupal-scaffold": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+      "@composer drupal:scaffold"
     ]
   }
 }
