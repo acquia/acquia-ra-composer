@@ -39,10 +39,6 @@
       }
     },
     "drupal-scaffold": {
-      "excludes": [
-        ".htaccess",
-        "robots.txt"
-      ]
     },
     "installer-types": ["bower-asset", "npm-asset"],
     "installer-paths": {
@@ -65,17 +61,12 @@
   },
   "scripts": {
     "post-install-cmd": [
-      "@composer drupal-scaffold",
       "find docroot vendor -name '.git' | xargs rm -rf",
       "find docroot vendor -name '.github' | xargs rm -rf"
     ],
     "post-update-cmd": [
-      "@composer drupal-scaffold",
       "find docroot vendor -name '.git' | xargs rm -rf",
       "find docroot vendor -name '.github' | xargs rm -rf"
-    ],
-    "drupal-scaffold": [
-      "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
     ]
   }
 }
