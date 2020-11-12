@@ -16,7 +16,7 @@
   "require": {
     "composer/installers": "^1.2.0",
     "cweagans/composer-patches": "^1.6.5",
-    "drupal-composer/drupal-scaffold": "^2.5.4",
+    "drupal/core-composer-scaffold": "^8.8",
     "oomphinc/composer-installers-extender": "^1.1",
     "wikimedia/composer-merge-plugin": "^1.4.1"
   },
@@ -39,6 +39,9 @@
       }
     },
     "drupal-scaffold": {
+      "locations": {
+        "web-root": "./[drupal-root]"
+      }
     },
     "installer-types": ["bower-asset", "npm-asset"],
     "installer-paths": {
