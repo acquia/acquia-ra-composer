@@ -38,6 +38,10 @@
     "drupal-scaffold": {
       "locations": {
         "web-root": "./[drupal-root]"
+      },
+      "file-mapping": {
+        "docroot/robots.txt": false,
+        "docroot/.htaccess": false
       }
     },
     "installer-types": ["bower-asset", "npm-asset"],
