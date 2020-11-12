@@ -16,9 +16,7 @@
   "require": {
     "composer/installers": "^1.2.0",
     "cweagans/composer-patches": "^1.6.5",
-    "drupal/core-composer-scaffold": "^8.8",
-    "oomphinc/composer-installers-extender": "^1.1",
-    "wikimedia/composer-merge-plugin": "^1.4.1"
+    "drupal/core-composer-scaffold": "^8.8"
   },
   "require-dev": {
   },
@@ -53,13 +51,6 @@
       "[drupal-root]/themes/contrib/{$name}": ["type:drupal-theme"],
       "[drupal-root]/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "[drupal-root]/libraries/{$name}": ["type:drupal-library", "type:bower-asset", "type:npm-asset"]
-    },
-    "merge-plugin": {
-      "include": [
-        "[drupal-root]/modules/custom/*/composer.json"
-      ],
-      "replace": false,
-      "ignore-duplicates": true
     }
   },
   "scripts": {
