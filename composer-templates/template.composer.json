@@ -40,8 +40,8 @@
         "web-root": "./[drupal-root]"
       },
       "file-mapping": {
-        "docroot/robots.txt": false,
-        "docroot/.htaccess": false
+        "[web-root]/robots.txt": false,
+        "[web-root]/.htaccess": false
       }
     },
     "installer-types": ["bower-asset", "npm-asset"],
