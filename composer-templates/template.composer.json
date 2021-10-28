@@ -37,7 +37,7 @@
     },
     "drupal-scaffold": {
       "locations": {
-        "web-root": "./docroot"
+        "web-root": "./[drupal-root]"
       },
       "file-mapping": {
         "[web-root]/robots.txt": false,
