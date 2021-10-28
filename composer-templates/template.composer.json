@@ -37,11 +37,11 @@
     },
     "drupal-scaffold": {
       "locations": {
-        "web-root": "./[drupal-root]"
+        "web-root": "./docroot"
       },
       "file-mapping": {
-        "docroot/robots.txt": false,
-        "docroot/.htaccess": false
+        "[web-root]/robots.txt": false,
+        "[web-root]/.htaccess": false
       }
     },
     "installer-types": ["bower-asset", "npm-asset"],
