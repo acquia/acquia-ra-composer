@@ -30,11 +30,7 @@
   "prefer-stable": true,
   "extra": {
     "enable-patching": true,
-    "patches": {
-      "drupal/[module_name]": {
-        "Note regarding the nature of the patch being applied": "https://www.drupal.org/files/issues/[patch_name].patch"
-      }
-    },
+    "patches": [],
     "drupal-scaffold": {
       "locations": {
         "web-root": "./[drupal-root]"
