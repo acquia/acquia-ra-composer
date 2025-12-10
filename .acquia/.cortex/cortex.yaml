@@ -17,7 +17,7 @@ info:
       description: All notifications realted to Developer Experience Group
   x-cortex-groups:
     - drupal-cloud
-    - is-service
+    - is-dependency
   x-cortex-link:
   - name: Onboarding Docs
     type: Documentation
