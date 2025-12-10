@@ -10,7 +10,7 @@ info:
     - type: GROUP
       name: acquia/devx
       provider: GITHUB
-      description: RA Development Team
+      description: Developer Experience Dev Team
     - type: SLACK
       channel: team-devx-notifications
       notificationsEnabled: true
