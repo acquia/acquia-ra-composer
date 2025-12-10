@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: acquia-ra-composer
+  description:  Provides Composer template files for building Drupal 8 sites with Acquia Remote Administration automation.
+  x-cortex-tag: acquia/acquia-ra-composer
+  x-cortex-git:
+    github:
+      repository: acquia/acquia-ra-composer
+  x-cortex-owners:
+    - type: GROUP
+      name: acquia/devx
+      provider: GITHUB
+      description: Developer Experience Dev Team
+    - type: SLACK
+      channel: team-devx-notifications
+      notificationsEnabled: true
+      description: All notifications realted to Developer Experience Group
+  x-cortex-groups:
+    - drupal-cloud
+    - is-dependency
+  x-cortex-link:
+  - name: Onboarding Docs
+    type: Documentation
+    url: https://acquia.atlassian.net/wiki/spaces/REMOTEADMIN/pages/41489397/Remote+Administration+Onboarding
+    description: Onboarding documentation for RA team
+  - name: MON-07.1
+    type: Compliance
+    url: https://github.com/acquia/fields/blob/103b2a5fcd4b7e751620d4ae894734387e428821/puppet/versions/devel/modules/acquia_util/templates/timesyncd.conf.erb#L16
+    description: Proof of Compliance for MON-07.1n
+  - type: Delivery
+    name: Artifacts
+    url: https://github.com/acquia/acquia-ra-composer/releases
+    description: Delivery artifacts
+  - type: Deployment
+    name: Regions
+    url: https://github.com/acquia/fields
+    description: RA Tooling is deployed on bastion and inherits the regions its deployed on
+  - type: Deployment
+    name: Infrastructure Code
+    url: https://github.com/acquia/fields
+    description: RA Tooling is deployed on bastion and inherits the IaC for bastion
+  x-cortex-custom-metadata:
+    CodeCoverage: false
