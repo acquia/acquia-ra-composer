@@ -8,7 +8,7 @@ info:
       repository: acquia/acquia-ra-composer
   x-cortex-owners:
     - type: GROUP
-      name: acquia/devx-ra
+      name: acquia/devx
       provider: GITHUB
       description: RA Development Team
     - type: SLACK
